@@ -30,6 +30,7 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  border-bottom-right-radius: 10px;
 }
 
 .middle {
@@ -51,10 +52,11 @@ body {
 
 .form-control:focus {
     color: #0b9444;
-    background-color: #adf8cc;
+    background-color: #fff;
     border-color:#0b9444;
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(64, 244, 112, 0.5);
+    border-radius: 10px;
 }
 
 .btn {

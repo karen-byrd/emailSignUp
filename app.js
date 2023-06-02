@@ -6,7 +6,7 @@ const { url } = require('inspector');
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res) {
@@ -37,14 +37,14 @@ app.post("/", function(req, res) {
 
    const options = {
     method: "POST",
-    auth: "klbyrd:71be631b8b13e342ec3100391f73b75c-us10"
+    auth: "klbyrd:********************************",
    }
 
     const request = https.request(url, options, function(response) {
         if(response.statusCode === 200) {
-            res.sendFile(__dirname + "./success.html");
+            res.sendFile(__dirname + "/success.html");
         } else {
-            res.sendFile(__dirname + "./failure.html");
+            res.sendFile(__dirname + "/failure.html");
         }
 
         response.on("data", function(data) {
@@ -65,11 +65,3 @@ app.post("/failure", function(req, res) {
 app.listen(3000, function() {
     console.log("Server is running on port 3000");
 })
-
-
-
-// mailchip API 
-// 71be631b8b13e342ec3100391f73b75c-us10
-
-// Audience ID/list id
-// 4b2ef26922
