@@ -35,11 +35,11 @@ app.post("/", function(req, res) {
 
     const jsonData = JSON.stringify(data);
 
-   const url = "https://us10.api.mailchimp.com/3.0/lists/${MAIL_CHIMP_LOG_ID}";
+   const url = "https://us10.api.mailchimp.com/3.0/lists/${process.env.MAIL_CHIMP_LOG_ID}";
 
    const options = {
     method: "POST",
-    auth: "klbyrd: ${process.env.MAIL_CHIMP_API_KEY}",
+    auth: "klbyrd:${process.env.MAIL_CHIMP_API_KEY}",
    }
 
     const request = https.request(url, options, function(response) {
