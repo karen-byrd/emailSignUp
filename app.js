@@ -1,8 +1,10 @@
+require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const https = require('https');
 const { url } = require('inspector');
+const { config } = require("dotenv");
 
 const app = express();
 
@@ -37,7 +39,7 @@ app.post("/", function(req, res) {
 
    const options = {
     method: "POST",
-    auth: "klbyrd:60e521a84e2ef79c078e33b921e79c2d-us10",
+    auth: "klbyrd: ${process.env.MAIL_CHIMP_API_KEY}",
    }
 
     const request = https.request(url, options, function(response) {
@@ -63,5 +65,5 @@ app.post("/failure", function(req, res) {
 
 
 app.listen(process.env.PORT || 3000, function() {
-    console.log("Server is running on port 3000");
+    console.log("Server is running on port ${port}");
 })
